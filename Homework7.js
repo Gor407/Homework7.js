@@ -24,7 +24,7 @@
 		this._gender = gender;
 	}
 	toString(){
-		return This author is ${this.name};
+		return `This author is ${this.name}`;
 	}
 
 }
@@ -60,10 +60,10 @@ class Book{
 		this._author = name;
 	}
 	getProfit(){
-		return The title is '${this.title}' and profil is ${this.price * this.quantity};
+		return `The title is '${this.title}' and profil is ${this.price * this.quantity}`;
 	}
 	toString(){
-		return  '${this.title}' book's author is ${this.author};
+		return  `'${this.title}' book's author is ${this.author}`;
 	}
 
 }
@@ -79,6 +79,12 @@ class Book{
 		   this.id = id;
 		   this.name = name;
 		   this.balance = balance;
+	   }
+	   get id(){
+	   return this._id;
+	   }
+	   set id(number){
+	   this._id=number;
 	   }
 	   get name(){
 		   return this._name;
@@ -96,7 +102,7 @@ class Book{
    
    credit(amount){
 	   this.balance += amount;
-	   return updated balance is ${this.balance};
+	   return `updated balance is ${this.balance}`;
    }
    
    
@@ -104,13 +110,13 @@ class Book{
 	   if(amount < this.balance){
 		  this.balance = this.balance - amount;
 	   }else{
-		   return Amount exceeded balance;
+		   return `Amount exceeded balance`;
 	   }
    }
    
    transferTo(anotherAccount, amount){
 	   if(amount < this.balance){
-		  return Amount exceeded balance;
+		  return `Amount exceeded balance`;
 	   }else{
 		   this.balance = anotherAccount + (this.balance - amount);
 		   return this.balance;
@@ -119,14 +125,14 @@ class Book{
    
     identifyAccounts(accountFirst, accountSecond){
 		if(accountFirst.balance === accountSecond.balance && accountFirst.name === accountSecond.name && accountFirst.id === accountSecond.id){
-			return  they are the same;
+			return  `they are the same`;
 		}else{
-			return they are different;
+			return `they are different`;
 		}
 	}
    
    toString(){
-	   return Account name is ${this.name};
+	   return `Account name is ${this.name}`;
    }
    
    
@@ -215,7 +221,7 @@ class person {
   }
   
    toString (){
-	   this ${this.firstname   this.lastname} is ${this.program}s teacher;
+	   `this ${this.firstname   this.lastname} is ${this.program}s teacher`;
    }
   
   
